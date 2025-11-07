@@ -5,7 +5,7 @@ import { sepolia } from "viem/chains";
 import { SUBMIT_TASK_PRIVATE_KEY, POLICY_CLIENT_ADDRESS } from "../constants/Addresses";
 import { ALCHEMY_URL } from "../constants/alchemy";
 
-const signer = privateKeyToAccount(SUBMIT_TASK_PRIVATE_KEY);
+const signer = privateKeyToAccount(SUBMIT_TASK_PRIVATE_KEY as `0x${string}`);
 
 export const newtonWalletClient = createWalletClient({
   chain: sepolia,
