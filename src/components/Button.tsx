@@ -41,6 +41,7 @@ export function Button({
     fontWeight: 600,
     transition: "all 0.2s ease",
     textDecoration: "none",
+    whiteSpace: "nowrap",
     ...variantStyles[variant],
     ...style,
   };
