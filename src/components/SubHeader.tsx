@@ -7,7 +7,7 @@ export function SubHeader() {
         Sanctions Screening API to ensure the transaction is not sent to a sanctioned address.
       </p>
       <p style={{ color: "#77767A" }}>
-        This demo app walks through task submission, evaluation,and sending the proof to a
+        This demo app walks through task submission, evaluation, and sending the proof to a
         policy-guarded smart contract on-chain.
       </p>
     </div>

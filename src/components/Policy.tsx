@@ -28,6 +28,8 @@ export function Policy() {
                   fontSize: "14px",
                   margin: 0,
                   lineHeight: "1",
+                  wordBreak: "break-all",
+                  overflowWrap: "break-word",
                 }}
               >
                 {POLICY_TEMPLATE_ADDRESS}

@@ -119,8 +119,8 @@ export function Step2({ intentCode, taskSubmission, connectedAddress }: Step2Pro
             go through or will be rejected.
           </Description>
           <Description>
-            Try sending a transaction to yourself, or to a sanctioned wallet -
-            0x1da5821544e25c636c1417ba96ade4cf6d2f9b5a
+            Try sending a transaction to yourself, or to a sanctioned wallet
+            such as <span style={{ wordBreak: "break-all", overflowWrap: "break-word" }}>0x1da5821544e25c636c1417ba96ade4cf6d2f9b5a</span>
           </Description>
           <ToAddressInput
             toAddress={toAddress}

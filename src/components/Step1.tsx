@@ -40,7 +40,7 @@ export function Step1({ connectedAddress, setConnectedAddress }: Step1Props) {
           {connectedAddress ? (
             <Description>
               Connected to{" "}
-              <span style={{ fontFamily: "monospace", color: "#000000" }}>{connectedAddress}</span>.
+              <span style={{ fontFamily: "monospace", color: "#000000", wordBreak: "break-all", overflowWrap: "break-word" }}>{connectedAddress}</span>.
               The transaction in Step 3 will be submitted from this address.
             </Description>
           ) : (
