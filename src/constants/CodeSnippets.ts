@@ -7,18 +7,18 @@ package chainalysis_sanctions_agent
 default allow := false
 
 # From Intent
-to_address := input.to
+to_address := lower(input.to)
 
 # From Policy Data
 api_call_status := data.data.status
-checked_address := data.data.address
+checked_address := lower(data.data.address)
 is_sanctioned := data.data.sanctioned
 
-# Allow the action if the to address is not sanctioned
+# Allow the action if the \`to\` address is not sanctioned
 allow if {
-  api_call_status == 200
-  checked_address == to_address
-  not is_sanctioned
+    api_call_status == 200
+    checked_address == to_address
+    not is_sanctioned
 }`;
 
 export const POLICY_DATA_JS = `import { fetch as httpFetch } from 'newton:provider/http@0.1.0';
