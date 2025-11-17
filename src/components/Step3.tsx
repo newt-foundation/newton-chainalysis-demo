@@ -10,7 +10,6 @@ import { StepHeading, Description } from "./Typography";
 import { newtonPublicClient } from "../viem/newtonPublicClient";
 import { EXPLORER_URLS } from "../constants/explorerUrls";
 import { browserWalletClient } from "../viem/browserWalletClient";
-import { safeStringify } from "../utils/safeJsonStringify";
 
 interface Step3Props {
   connectedAddress: string | null;
@@ -55,7 +54,7 @@ export function Step3({ connectedAddress, attestation, transactionSubmission }: 
 
       // Wait for transaction confirmation
       const receipt = await newtonPublicClient.waitForTransactionReceipt({ hash });
-      console.log("receipt:", JSON.parse(safeStringify(receipt)));
+      console.log("receipt:", receipt);
       setTxConfirmed(true);
     } catch (err: unknown) {
       console.error("Error submitting transaction:", err);

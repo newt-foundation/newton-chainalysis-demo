@@ -12,7 +12,6 @@ import { ExternalLink } from "./ExternalLink";
 import { Intent } from "./Intent";
 import { StepHeading, Description } from "./Typography";
 import { EXPLORER_URLS } from "../constants/explorerUrls";
-import { safeStringify } from "../utils/safeJsonStringify";
 
 interface Step2Props {
   connectedAddress: string | null;
@@ -81,7 +80,7 @@ export function Step2({ intentCode, taskSubmission, connectedAddress }: Step2Pro
 
       console.log("waitForTaskResponded result:", response);
       console.log("evaluation result:", response.taskResponse?.evaluationResult);
-      console.log("attestation: ", JSON.parse(safeStringify(response.attestation)));
+      console.log("attestation: ", response.attestation);
 
       setEvaluationResult(response.taskResponse?.evaluationResult ?? null);
       setAttestation(response.attestation ?? null);
