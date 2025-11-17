@@ -45,7 +45,8 @@ export function Step3({ connectedAddress, attestation, transactionSubmission }: 
         functionName: "sanctionProtectedTransfer",
         args: [attestation],
         account: connectedAddress as `0x${string}`,
-        gas: BigInt(10000000),
+        gas: BigInt(120_000),
+        value: BigInt(1),
       });
 
       console.log("Transaction submitted:", hash);
