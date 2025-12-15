@@ -1,5 +1,4 @@
 import { isAddress } from "viem";
-import { TaskResponseResult } from "@magicnewton/newton-protocol-sdk/dist/types/types/task";
 import { newtonWalletClient } from "../viem/newtonWalletClient";
 import { newtonPublicClient } from "../viem/newtonPublicClient";
 import { TaskSubmissionState } from "../hooks/useTaskSubmission";
@@ -64,6 +63,7 @@ export function Step2({ intentCode, taskSubmission, connectedAddress }: Step2Pro
 
       console.log("submitting task...");
 
+      // TODO: move to backend route
       const pendingTask = await newtonWalletClient.submitEvaluationRequest(JSON.parse(intentCode));
 
       console.log("submitEvaluationRequest result:", pendingTask);
@@ -73,7 +73,7 @@ export function Step2({ intentCode, taskSubmission, connectedAddress }: Step2Pro
 
       console.log("waiting for task to respond...");
 
-      const response: TaskResponseResult = await newtonPublicClient.waitForTaskResponded({
+      const response = await newtonPublicClient.waitForTaskResponded({
         taskId: pendingTask.result.taskId,
         timeoutMs: 30_000,
       });
